@@ -1,13 +1,17 @@
 NAME	=	libft.a
 
-SRCS	=	libc_ft/ft_memset.c		\
-			libc_ft/ft_bzero.c#		\
+SRCS	=	personnals_ft/ft_isupper.c	\
+			personnals_ft/ft_islower.c	\
+			personnals_ft/ft_isblank.c	\
+			personnals_ft/ft_isspace.c	\
+			libc_ft/ft_memset.c		\
+			libc_ft/ft_bzero.c		\
 			libc_ft/ft_memcpy.c		\
 			libc_ft/ft_memccpy.c	\
 			libc_ft/ft_memmove.c	\
 			libc_ft/ft_memchr.c		\
 			libc_ft/ft_memcmp.c		\
-			libc-ft/ft_strlen.c		\
+			libc_ft/ft_strlen.c		\
 			libc_ft/ft_isalpha.c	\
 			libc_ft/ft_isdigit.c	\
 			libc_ft/ft_isalnum.c	\
@@ -19,7 +23,7 @@ SRCS	=	libc_ft/ft_memset.c		\
 			libc_ft/ft_strrchr.c	\
 			libc_ft/ft_strncmp.c	\
 			libc_ft/ft_strlcpy.c	\
-			libc_ft/ft_strlcat.c	\
+			libc_ft/ft_strlcat.c#	\
 			libc_ft/ft_strnstr.c	\
 			libc_ft/ft_atoi.c		\
 			libc_ft/ft_calloc.c		\
@@ -47,7 +51,7 @@ SRCS	=	libc_ft/ft_memset.c		\
 OBJS	=	$(SRCS:.c=.o)
 
 CC		=	gcc
-CFLAGS	=	-Wall -Wextra -Werror -I. -fPIC
+CFLAGS	=	-Wall -Wextra -Werror -I.
 
 $(NAME)	:	$(OBJS)
 			rm -f libft.so
@@ -59,10 +63,10 @@ so		:	$(OBJS)
 			$(CC) -shared -Wl,-soname,libft.so -o libft.so $(OBJS)
 
 main	:	$(NAME)
-			$(CC) main.c -L. -lft
+			$(CC) main.c -L. -lft -lbsd
 
 test	:	main
-			@echo "================================================================================================================\n"
+			@echo "=================================================================================\n"
 			@./a.out
 
 clean	:
