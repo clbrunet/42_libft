@@ -14,5 +14,18 @@
 
 char	*ft_strdup(const char *s)
 {
+	char	*dup;
+	char	*dup_bp;
 
+	if (!s || !(dup = malloc((ft_strlen(s) + 1) * sizeof(char))))
+		return ((char *)NULL);
+	dup_bp = dup;
+	while (*s)
+	{
+		*dup = *s;
+		dup++;
+		s++;
+	}
+	*dup = 0;
+	return (dup_bp);
 }

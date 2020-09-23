@@ -23,11 +23,11 @@ SRCS	=	personnals_ft/ft_isupper.c	\
 			libc_ft/ft_strrchr.c	\
 			libc_ft/ft_strncmp.c	\
 			libc_ft/ft_strlcpy.c	\
-			libc_ft/ft_strlcat.c#	\
+			libc_ft/ft_strlcat.c	\
 			libc_ft/ft_strnstr.c	\
 			libc_ft/ft_atoi.c		\
 			libc_ft/ft_calloc.c		\
-			libc_ft/ft_strdup.c		\
+			libc_ft/ft_strdup.c#		\
 			additionals_ft/ft_substr.c		\
 			additionals_ft/ft_strjoin.c		\
 			additionals_ft/ft_strtrim.c		\
