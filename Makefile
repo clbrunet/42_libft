@@ -27,31 +27,31 @@ SRCS	=	personnals_ft/ft_isupper.c	\
 			libc_ft/ft_strnstr.c	\
 			libc_ft/ft_atoi.c		\
 			libc_ft/ft_calloc.c		\
-			libc_ft/ft_strdup.c#		\
+			libc_ft/ft_strdup.c		\
 			additionals_ft/ft_substr.c		\
 			additionals_ft/ft_strjoin.c		\
 			additionals_ft/ft_strtrim.c		\
-			additionals_ft/ft_split.c		\
-			additionals_ft/ft_itoa.c		\
-			additionals_ft/ft_strmapi.c		\
-			additionals_ft/ft_putchar_fd.c	\
-			additionals_ft/ft_putstr_fd.c	\
-			additionals_ft/ft_putendl_fd.c	\
-			additionals_ft/ft_putnbr_fd.c	\
-			bonus_ft/ft_lstnew.c			\
-			bonus_ft/ft_lstadd_front.c	\
-			bonus_ft/ft_lstsize.c		\
-			bonus_ft/ft_lstlast.c		\
-			bonus_ft/ft_lstadd_back.c	\
-			bonus_ft/ft_lstdelone.c		\
-			bonus_ft/ft_lstclear.c		\
-			bonus_ft/ft_lstiter.c		\
-			bonus_ft/ft_lstmap.c
+			additionals_ft/ft_split.c#		\
+			additionals_ft/ft_itoa.c#		\
+			additionals_ft/ft_strmapi.c#		\
+			additionals_ft/ft_putchar_fd.c#	\
+			additionals_ft/ft_putstr_fd.c#	\
+			additionals_ft/ft_putendl_fd.c#	\
+			additionals_ft/ft_putnbr_fd.c#	\
+			bonus_ft/ft_lstnew.c#			\
+			bonus_ft/ft_lstadd_front.c#	\
+			bonus_ft/ft_lstsize.c#		\
+			bonus_ft/ft_lstlast.c#		\
+			bonus_ft/ft_lstadd_back.c#	\
+			bonus_ft/ft_lstdelone.c#		\
+			bonus_ft/ft_lstclear.c#		\
+			bonus_ft/ft_lstiter.c#		\
+			bonus_ft/ft_lstmap.c#
 
 OBJS	=	$(SRCS:.c=.o)
 
 CC		=	gcc
-CFLAGS	=	-Wall -Wextra -Werror -I.
+CFLAGS	=	-Wall -Wextra -Werror -I. -g -fsanitize=address
 
 $(NAME)	:	$(OBJS)
 			rm -f libft.so
@@ -63,7 +63,7 @@ so		:	$(OBJS)
 			$(CC) -shared -Wl,-soname,libft.so -o libft.so $(OBJS)
 
 main	:	$(NAME)
-			$(CC) main.c -L. -lft -lbsd
+			$(CC) main.c -L. -lft -lbsd -g -fsanitize=address
 
 test	:	main
 			@echo "=================================================================================\n"
