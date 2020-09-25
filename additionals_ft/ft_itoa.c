@@ -41,7 +41,6 @@ char			*ft_itoa(int n)
 		is_negative = 1;
 	}
 	len = ft_nlen(l_n, is_negative + 1);
-	printf("len %i\n", len);
 	if (!(a = malloc((len + 1) * sizeof(char))))
 		return ((char *)NULL);
 	a[len] = 0;
