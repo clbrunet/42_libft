@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clemo <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: clbrunet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 07:12:29 by clemo             #+#    #+#             */
-/*   Updated: 2020/09/24 07:12:29 by clemo            ###   ########.fr       */
+/*   Created: 2020/09/24 07:12:29 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/09/24 07:12:29 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ static void		ft_fill_strs(char **strs, char const *s, char c,
 		strs[i][j] = 0;
 		i++;
 	}
+	strs[i] = (char *)NULL;
 }
 
 char			**ft_split(char const *s, char c)
@@ -98,7 +99,6 @@ char			**ft_split(char const *s, char c)
 	count = ft_count_strs(s, c);
 	if (!(strs = malloc((count + 1) * sizeof(char *))))
 		return ((char **)NULL);
-	strs[count] = (char *)NULL;
 	if (!ft_malloc_strs(strs, s, c, count))
 		return ((char **)NULL);
 	ft_fill_strs(strs, s, c, count);

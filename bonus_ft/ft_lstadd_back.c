@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clbrunet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/23 11:07:32 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/09/23 11:07:32 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/09/25 06:05:42 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/09/25 06:05:42 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	return (ft_isupper(c) || ft_islower(c));
+	t_list	*last;
+
+	if (!alst || !new)
+		return ;
+	if (!*alst)
+	{
+		*alst = new;
+		return ;
+	}
+	last = *alst;
+	while (last->next)
+		last = last->next;
+	last->next = new;
 }

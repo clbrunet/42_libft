@@ -3,16 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clemo <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: clbrunet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 07:12:48 by clemo             #+#    #+#             */
-/*   Updated: 2020/09/24 07:12:48 by clemo            ###   ########.fr       */
+/*   Created: 2020/09/24 07:12:48 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/09/25 14:11:49 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static unsigned	ft_nlen(long n, int len)
 {
+	if (n > 9)
+		return (ft_nlen(n / 10, len + 1));
+	return (len);
+}
 
+static void		ft_itoa_conv(char *a, long n)
+{
+	if (n > 9)
+		ft_itoa_conv(a - 1, n / 10);
+	*a = n % 10 + '0';
+}
+
+char			*ft_itoa(int n)
+{
+	char		*a;
+	long		l_n;
+	unsigned	len;
+	int			is_negative;
+
+	l_n = (long)n;
+	is_negative = 0;
+	if (l_n < 0)
+	{
+		l_n *= -1;
+		is_negative = 1;
+	}
+	len = ft_nlen(l_n, is_negative + 1);
+	printf("len %i\n", len);
+	if (!(a = malloc((len + 1) * sizeof(char))))
+		return ((char *)NULL);
+	a[len] = 0;
+	if (is_negative)
+		*a = '-';
+	ft_itoa_conv(a + len - 1, l_n);
+	return (a);
 }

@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clbrunet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/23 11:07:32 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/09/23 11:07:32 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/09/25 06:04:52 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/09/25 06:04:52 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	return (ft_isupper(c) || ft_islower(c));
+	if (!lst)
+		return ((t_list *)NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/23 11:07:32 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/09/23 11:07:32 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/09/24 07:14:00 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/09/25 06:23:53 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	return (ft_isupper(c) || ft_islower(c));
+	if (fd > 0)
+	{
+		write(fd, s, ft_strlen(s));
+		write(fd, "\n", 1);
+	}
 }
