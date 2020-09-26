@@ -75,5 +75,9 @@ int				ft_isupper(int c);
 int				ft_islower(int c);
 int				ft_isblank(int c);
 int				ft_isspace(int c);
+void			ft_putchar(char c);
+void			ft_putstr(char *s);
+void			ft_putendl(char *s);
+void			ft_putnbr(int n);
 
 #endif
