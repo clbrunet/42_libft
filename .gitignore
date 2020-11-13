@@ -3,6 +3,7 @@ libft.a
 libft.so
 compile_flags.txt
 main.c
+personnals_ft/
 **/*.o
 Libftest/
 libft-unit-test/

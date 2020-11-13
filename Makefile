@@ -1,14 +1,6 @@
 NAME	=	libft.a
 
-SRCS	=	personnals_ft/ft_isupper.c	\
-			personnals_ft/ft_islower.c	\
-			personnals_ft/ft_isblank.c	\
-			personnals_ft/ft_isspace.c	\
-			personnals_ft/ft_putchar.c	\
-			personnals_ft/ft_putstr.c	\
-			personnals_ft/ft_putendl.c	\
-			personnals_ft/ft_putnbr.c	\
-			libc_ft/ft_memset.c		\
+SRCS	=	libc_ft/ft_memset.c		\
 			libc_ft/ft_bzero.c		\
 			libc_ft/ft_memcpy.c		\
 			libc_ft/ft_memccpy.c	\
