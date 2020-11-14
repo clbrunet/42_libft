@@ -3,16 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clbrunet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/23 11:11:26 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/09/23 11:11:26 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/14 14:46:04 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/14 14:46:04 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *nptr)
+static int	ft_isspace(int c)
+{
+	return (c == ' ' || c == '\f' || c == '\t'
+			|| c == '\n' || c == '\r' || c == '\v');
+}
+
+int			ft_atoi(const char *nptr)
 {
 	long	n;
 	int		sign;

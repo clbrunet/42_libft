@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clbrunet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 07:10:59 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/13 06:40:33 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/14 13:09:32 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/14 13:25:02 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char		*sub_bp;
 	unsigned	s_len;
 
-	if (!s)
-		return ((char *)NULL);
 	s_len = ft_strlen(s);
-	if (start >= s_len)
+	if (!s || start >= s_len)
 		return ((char *)NULL);
 	s += start;
 	s_len -= start;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clbrunet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/23 11:07:12 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/09/23 11:07:12 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/14 14:48:04 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/14 14:48:04 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ size_t		ft_strlen(const char *s)
 	s_bp = s;
 	while (*s)
 		s++;
-	return (s - s_bp);
+	return ((size_t)(s - s_bp));
 }
