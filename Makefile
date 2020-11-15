@@ -52,12 +52,14 @@ CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror -I.
 
 $(NAME)		:	$(OBJS)
-	ar rcs -o $(NAME) $(OBJS)
+	ar rc -o $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 all			:	$(NAME)
 
-bonus		:	$(OBJS) $(BONUS_SRCS)
-	ar rcs -o $(NAME) $(OBJS) $(BONUS_SRCS)
+bonus		:	$(OBJS) $(BONUS_OBJS)
+	ar rc -o $(NAME) $(OBJS) $(BONUS_OBJS)
+	ranlib $(NAME)
 
 # so			:	$(OBJS)
 # $(CC) -shared -Wl,-soname,libft.so -o libft.so $(OBJS)
