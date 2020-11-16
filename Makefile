@@ -65,7 +65,7 @@ bonus		:	$(OBJS) $(BONUS_OBJS)
 # $(CC) -shared -Wl,-soname,libft.so -o libft.so $(OBJS)
 
 clean		:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean		:	clean
 	rm -f $(NAME)
