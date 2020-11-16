@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+#include <stdio.h>
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char		*sub;
@@ -19,8 +20,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned	s_len;
 
 	s_len = ft_strlen(s);
+	printf("slen: %u, start: %u\n", s_len, start);
 	if (!s || start >= s_len)
+	{
+		printf("DEV\n");
 		return ((char *)NULL);
+	}
 	s += start;
 	s_len -= start;
 	if (s_len < len)
