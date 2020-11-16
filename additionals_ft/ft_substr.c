@@ -6,22 +6,33 @@
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:53:51 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/16 13:53:51 by clbrunet         ###   ########.fr       */
+/*   Updated: 2020/11/16 14:44:30 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
+static char	*ft_strvoid(void)
+{
+	char	*strvoid;
+
+	if (!(strvoid = malloc(sizeof(char))))
+		return ((char *)NULL);
+	*strvoid = 0;
+	return (strvoid);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char		*sub;
 	char		*sub_bp;
 	unsigned	s_len;
 
-	s_len = ft_strlen(s);
-	if (!s || start >= s_len)
+	if (!s)
 		return ((char *)NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strvoid());
 	s += start;
 	s_len -= start;
 	if (s_len < len)
