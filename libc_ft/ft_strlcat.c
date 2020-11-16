@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/14 14:47:01 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/14 14:47:01 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:48:10 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/16 13:48:10 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dst_len;
 	size_t	src_len;
 
-	if (!dst || !src)
-		return (0);
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	if (size <= dst_len)

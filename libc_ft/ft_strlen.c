@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/14 14:48:04 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/14 14:48:04 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:44:23 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/16 13:44:23 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ size_t		ft_strlen(const char *s)
 {
 	const char	*s_bp;
 
-	if (!s)
-		return (0);
 	s_bp = s;
 	while (*s)
 		s++;

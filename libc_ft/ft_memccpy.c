@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/14 14:48:55 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/14 14:48:55 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:42:57 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/16 13:42:57 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	const char	*s_src;
 	char		c_c;
 
-	if (!dest || !src)
-		return (NULL);
 	s_dest = (char *)dest;
 	s_src = (char *)src;
 	c_c = (char)c;

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/14 14:49:47 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/14 14:49:47 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:47:48 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/16 13:47:48 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	const char	*little_bp;
 	int			tested_char;
 
-	if (!big || !little)
-		return (NULL);
 	if (!*little)
 		return ((char *)big);
 	little_bp = little;

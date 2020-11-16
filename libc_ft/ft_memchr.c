@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/14 14:47:17 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/15 06:50:47 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:43:39 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/16 13:43:39 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	const unsigned char		*s_s;
 	unsigned char			uc_c;
 
-	if (!n || !s)
+	if (!n)
 		return (NULL);
 	s_s = (unsigned char *)s;
 	uc_c = (unsigned char)c;

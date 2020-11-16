@@ -61,9 +61,6 @@ bonus		:	$(OBJS) $(BONUS_OBJS)
 	ar -rc $(NAME) $(OBJS) $(BONUS_OBJS)
 	ranlib $(NAME)
 
-# so			:	$(OBJS)
-# $(CC) -shared -Wl,-soname,libft.so -o libft.so $(OBJS)
-
 clean		:
 	rm -f $(OBJS) $(BONUS_OBJS)
 

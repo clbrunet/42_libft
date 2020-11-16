@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/14 14:49:58 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/14 14:49:58 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:54:47 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/16 13:54:47 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strrchr(const char *s, int c)
 	const char	*ptr;
 	char		c_c;
 
-	if (!s)
-		return ((char *)NULL);
 	c_c = (char)c;
 	ptr = NULL;
 	while (*s)

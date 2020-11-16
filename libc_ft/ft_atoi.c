@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/14 14:46:04 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/14 14:46:04 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:49:05 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/16 13:49:05 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int			ft_atoi(const char *nptr)
 	long	n;
 	int		sign;
 
-	if (!nptr)
-		return (0);
 	while (ft_isspace(*nptr))
 		nptr++;
 	sign = 1;
