@@ -52,13 +52,13 @@ CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror -I.
 
 $(NAME)		:	$(OBJS)
-	ar rc -o $(NAME) $(OBJS)
+	ar -rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
 all			:	$(NAME)
 
 bonus		:	$(OBJS) $(BONUS_OBJS)
-	ar rc -o $(NAME) $(OBJS) $(BONUS_OBJS)
+	ar -rc $(NAME) $(OBJS) $(BONUS_OBJS)
 	ranlib $(NAME)
 
 # so			:	$(OBJS)

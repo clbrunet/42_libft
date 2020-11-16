@@ -6,7 +6,7 @@
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 14:45:24 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/14 14:45:24 by clbrunet         ###   ########.fr       */
+/*   Updated: 2020/11/16 13:20:24 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static char	*ft_strvoid(void)
 	return (strvoid);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	char		*trim;
 	char const	*str_cp;
