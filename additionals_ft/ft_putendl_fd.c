@@ -6,7 +6,7 @@
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:53:29 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/16 13:53:29 by clbrunet         ###   ########.fr       */
+/*   Updated: 2020/11/17 20:10:50 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (s && fd > 0)
+	if (s)
 	{
 		write(fd, s, ft_strlen(s));
 		write(fd, "\n", 1);
