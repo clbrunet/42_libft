@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 13:53:29 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/17 20:10:50 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:48:10 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/16 13:48:10 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	if (s)
+	size_t	dst_len;
+	size_t	src_len;
+
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (dstsize <= dst_len)
+		return (dstsize + src_len);
+	dst += dst_len;
+	while (*src && --dstsize - dst_len)
 	{
-		write(fd, s, ft_strlen(s));
-		write(fd, "\n", 1);
+		*dst = *src;
+		dst++;
+		src++;
 	}
+	*dst = 0;
+	return (dst_len + src_len);
 }

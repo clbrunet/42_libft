@@ -1,65 +1,63 @@
 NAME		=	libft.a
 
-SRCS		=	libc_ft/ft_memset.c		\
-				libc_ft/ft_bzero.c		\
-				libc_ft/ft_memcpy.c		\
-				libc_ft/ft_memccpy.c	\
-				libc_ft/ft_memmove.c	\
-				libc_ft/ft_memchr.c		\
-				libc_ft/ft_memcmp.c		\
-				libc_ft/ft_strlen.c		\
-				libc_ft/ft_isalpha.c	\
-				libc_ft/ft_isdigit.c	\
-				libc_ft/ft_isalnum.c	\
-				libc_ft/ft_isascii.c	\
-				libc_ft/ft_isprint.c	\
-				libc_ft/ft_toupper.c	\
-				libc_ft/ft_tolower.c	\
-				libc_ft/ft_strchr.c		\
-				libc_ft/ft_strrchr.c	\
-				libc_ft/ft_strncmp.c	\
-				libc_ft/ft_strlcpy.c	\
-				libc_ft/ft_strlcat.c	\
-				libc_ft/ft_strnstr.c	\
-				libc_ft/ft_atoi.c		\
-				libc_ft/ft_calloc.c		\
-				libc_ft/ft_strdup.c		\
-				additionals_ft/ft_substr.c		\
-				additionals_ft/ft_strjoin.c		\
-				additionals_ft/ft_strtrim.c		\
-				additionals_ft/ft_split.c		\
-				additionals_ft/ft_itoa.c		\
-				additionals_ft/ft_strmapi.c		\
-				additionals_ft/ft_putchar_fd.c	\
-				additionals_ft/ft_putstr_fd.c	\
-				additionals_ft/ft_putendl_fd.c	\
-				additionals_ft/ft_putnbr_fd.c
+SRCS		=	ft_memset.c			\
+				ft_bzero.c			\
+				ft_memcpy.c			\
+				ft_memccpy.c		\
+				ft_memmove.c		\
+				ft_memchr.c			\
+				ft_memcmp.c			\
+				ft_strlen.c			\
+				ft_isalpha.c		\
+				ft_isdigit.c		\
+				ft_isalnum.c		\
+				ft_isascii.c		\
+				ft_isprint.c		\
+				ft_toupper.c		\
+				ft_tolower.c		\
+				ft_strchr.c			\
+				ft_strrchr.c		\
+				ft_strncmp.c		\
+				ft_strlcpy.c		\
+				ft_strlcat.c		\
+				ft_strnstr.c		\
+				ft_atoi.c			\
+				ft_calloc.c			\
+				ft_strdup.c			\
+				ft_substr.c			\
+				ft_strjoin.c		\
+				ft_strtrim.c		\
+				ft_split.c			\
+				ft_itoa.c			\
+				ft_strmapi.c		\
+				ft_putchar_fd.c		\
+				ft_putstr_fd.c		\
+				ft_putendl_fd.c		\
+				ft_putnbr_fd.c
 
-BONUS_SRCS	=	bonus_ft/ft_lstnew.c		\
-				bonus_ft/ft_lstadd_front.c	\
-				bonus_ft/ft_lstsize.c		\
-				bonus_ft/ft_lstlast.c		\
-				bonus_ft/ft_lstadd_back.c	\
-				bonus_ft/ft_lstdelone.c		\
-				bonus_ft/ft_lstclear.c		\
-				bonus_ft/ft_lstiter.c		\
-				bonus_ft/ft_lstmap.c
+BONUS_SRCS	=	ft_lstnew.c			\
+				ft_lstadd_front.c	\
+				ft_lstsize.c		\
+				ft_lstlast.c		\
+				ft_lstadd_back.c	\
+				ft_lstdelone.c		\
+				ft_lstclear.c		\
+				ft_lstiter.c		\
+				ft_lstmap.c
 
 OBJS		=	$(SRCS:.c=.o)
 BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror -I.
+CFLAGS		=	-Wall -Wextra -Werror
 
 $(NAME)		:	$(OBJS)
-	ar -rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	ar -rcs $(NAME) $(OBJS)
 
 all			:	$(NAME)
 
 bonus		:	$(OBJS) $(BONUS_OBJS)
-	ar -rc $(NAME) $(OBJS) $(BONUS_OBJS)
-	ranlib $(NAME)
+	ar -rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean		:
 	rm -f $(OBJS) $(BONUS_OBJS)

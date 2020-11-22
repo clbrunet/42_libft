@@ -6,7 +6,7 @@
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:53:38 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/16 13:53:38 by clbrunet         ###   ########.fr       */
+/*   Updated: 2020/11/19 13:43:52 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,13 @@ char			**ft_split(char const *s, char c)
 
 	if (!s)
 		return ((char **)NULL);
+	if (!*s)
+	{
+		if (!(strs = malloc(sizeof(char *))))
+			return ((char **)NULL);
+		strs[0] = (char *)NULL;
+		return (strs);
+	}
 	if (!c)
 		return (ft_split_by_zero(s));
 	count = ft_count_strs(s, c);

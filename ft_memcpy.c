@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 13:53:57 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/16 13:53:57 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:42:47 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/16 13:42:47 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	t_list	*map;
+	char		*s_dst;
+	const char	*s_src;
 
-	if (!lst)
-		return ((t_list *)NULL);
-	(void)del;
-	if (!(map = ft_lstnew((*f)(lst->content))))
-		return ((t_list *)NULL);
-	lst = lst->next;
-	while (lst)
-	{
-		ft_lstadd_back(&map, ft_lstnew((*f)(lst->content)));
-		lst = lst->next;
-	}
-	return (map);
+	if (!dst && !src)
+		return (dst);
+	s_dst = (char *)dst;
+	s_src = (char *)src;
+	while (n--)
+		*(s_dst++) = *(s_src++);
+	return (dst);
 }

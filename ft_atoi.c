@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 13:48:10 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/16 13:48:10 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:49:05 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/16 13:49:05 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+static int	ft_isspace(int c)
 {
-	size_t	dst_len;
-	size_t	src_len;
+	return (c == ' ' || c == '\f' || c == '\t'
+			|| c == '\n' || c == '\r' || c == '\v');
+}
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (size <= dst_len)
-		return (size + src_len);
-	dst += dst_len;
-	while (*src && --size - dst_len)
+int			ft_atoi(const char *str)
+{
+	long	n;
+	int		sign;
+
+	while (ft_isspace(*str))
+		str++;
+	sign = 1;
+	if (*str == '-')
 	{
-		*dst = *src;
-		dst++;
-		src++;
+		sign = -1;
+		str++;
 	}
-	*dst = 0;
-	return (dst_len + src_len);
+	else if (*str == '+')
+		str++;
+	n = 0;
+	while (ft_isdigit(*str))
+	{
+		n = n * 10 + *str - '0';
+		str++;
+	}
+	return (n * sign);
 }

@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 13:49:05 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/16 13:49:05 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:49:28 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/16 13:49:28 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+char	*ft_strdup(const char *s1)
 {
-	return (c == ' ' || c == '\f' || c == '\t'
-			|| c == '\n' || c == '\r' || c == '\v');
-}
+	char	*dup;
+	char	*dup_bp;
 
-int			ft_atoi(const char *nptr)
-{
-	long	n;
-	int		sign;
-
-	while (ft_isspace(*nptr))
-		nptr++;
-	sign = 1;
-	if (*nptr == '-')
+	if (!(dup = malloc((ft_strlen(s1) + 1) * sizeof(char))))
+		return ((char *)NULL);
+	dup_bp = dup;
+	while (*s1)
 	{
-		sign = -1;
-		nptr++;
+		*dup = *s1;
+		dup++;
+		s1++;
 	}
-	else if (*nptr == '+')
-		nptr++;
-	n = 0;
-	while (ft_isdigit(*nptr))
-	{
-		n = n * 10 + *nptr - '0';
-		nptr++;
-	}
-	return (n * sign);
+	*dup = 0;
+	return (dup_bp);
 }

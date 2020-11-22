@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 13:42:57 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/16 13:42:57 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:49:24 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/18 14:36:21 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	char		*s_dest;
-	const char	*s_src;
-	char		c_c;
+	void	*ptr;
 
-	s_dest = (char *)dest;
-	s_src = (char *)src;
-	c_c = (char)c;
-	while (n--)
-	{
-		*s_dest = *(s_src++);
-		if (*s_dest == c_c)
-			return ((void *)(s_dest + 1));
-		s_dest++;
-	}
-	return (NULL);
+	if (!(ptr = malloc(count * size)))
+		return (NULL);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }

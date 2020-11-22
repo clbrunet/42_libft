@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 13:43:39 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/16 13:43:39 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:42:57 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/18 09:50:58 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	const unsigned char		*s_s;
-	unsigned char			uc_c;
+	unsigned char		*us_dst;
+	const unsigned char	*us_src;
+	unsigned char		uc_c;
 
-	if (!n)
-		return (NULL);
-	s_s = (unsigned char *)s;
+	us_dst = (unsigned char *)dst;
+	us_src = (unsigned char *)src;
 	uc_c = (unsigned char)c;
-	while (--n && *s_s != uc_c)
-		s_s++;
-	if (*s_s == uc_c)
-		return ((void *)s_s);
+	while (n--)
+	{
+		*us_dst = *(us_src++);
+		if (*us_dst == uc_c)
+			return ((void *)(us_dst + 1));
+		us_dst++;
+	}
 	return (NULL);
 }

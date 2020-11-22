@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 13:42:47 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/16 13:42:47 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:43:06 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/16 14:17:22 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char		*s_dest;
+	char		*s_dst;
 	const char	*s_src;
 
-	if (!dest && !src)
-		return (dest);
-	s_dest = (char *)dest;
+	if (!dst && !src)
+		return (dst);
+	s_dst = (char *)dst;
 	s_src = (char *)src;
-	while (n--)
-		*(s_dest++) = *(s_src++);
-	return (dest);
+	if (dst < src)
+		while (len--)
+			*(s_dst++) = *(s_src++);
+	else
+	{
+		s_dst += len - 1;
+		s_src += len - 1;
+		while ((void *)s_dst >= dst)
+			*(s_dst--) = *(s_src--);
+	}
+	return (dst);
 }

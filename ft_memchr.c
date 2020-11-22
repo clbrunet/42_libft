@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbrunet <clbrunet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 13:53:33 by clbrunet          #+#    #+#             */
-/*   Updated: 2020/11/17 20:09:29 by clbrunet         ###   ########.fr       */
+/*   Created: 2020/11/16 13:43:39 by clbrunet          #+#    #+#             */
+/*   Updated: 2020/11/18 09:57:43 by clbrunet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_putnbr_fd(int n, int fd)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (n == -2147483648)
-	{
-		write(fd, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0)
-	{
-		write(fd, "-", 1);
-		n *= -1;
-	}
-	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	ft_putchar_fd(n % 10 + '0', fd);
+	const unsigned char		*us_s;
+	unsigned char			uc_c;
+
+	if (!n)
+		return (NULL);
+	us_s = (unsigned char *)s;
+	uc_c = (unsigned char)c;
+	while (--n && *us_s != uc_c)
+		us_s++;
+	if (*us_s == uc_c)
+		return ((void *)us_s);
+	return (NULL);
 }
